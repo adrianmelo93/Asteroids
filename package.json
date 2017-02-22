@@ -1,0 +1,29 @@
+{
+  "name": "Asteroids",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "bundle": "browserify js/main.js -o js/prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianmelo93/Asteroids.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianmelo93/Asteroids/issues"
+  },
+  "homepage": "https://github.com/adrianmelo93/Asteroids#readme",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "nodejs": "0.0.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "nodejs": "^0.0.0"
+  },
+  "description": ""
+}
