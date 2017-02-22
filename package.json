@@ -1,10 +1,17 @@
 {
   "name": "Asteroids",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "browserify": "^14.1.0",
+    "nodejs": "^0.0.0",
+    "watchify": "^3.9.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "bundle": "browserify js/main.js -o js/prod.js"
+    "watch":"watchify js/main.js -o js/prod.js"
   },
   "repository": {
     "type": "git",
@@ -16,14 +23,5 @@
   "bugs": {
     "url": "https://github.com/adrianmelo93/Asteroids/issues"
   },
-  "homepage": "https://github.com/adrianmelo93/Asteroids#readme",
-  "devDependencies": {
-    "browserify": "^14.1.0",
-    "nodejs": "0.0.0",
-    "watchify": "^3.9.0"
-  },
-  "dependencies": {
-    "nodejs": "^0.0.0"
-  },
-  "description": ""
+  "homepage": "https://github.com/adrianmelo93/Asteroids#readme"
 }

@@ -1,10 +1,8 @@
 // THIS IS YOUR JAVASCRIPT DOCUMENT!
 
 // GENERATE ASTEROIDS IN HTML DOCUMENT
-window.onload = function (){
-
-var createAsteroid = require('./createAsteroid.js');
-var controls = require('./controls.js');
+var createAsteroids = require("./createAsteroids.js") ;
+createAsteroids();
 // MOVEMENT CONTROLS FOR SHIP
 
 // declare & initialize movement variables
@@ -21,7 +19,31 @@ var leftPressed = 0;
 var rightPressed = 0;
 
 
+function keyDown(playerKeyPress)
+{
+  var keyPressed = playerKeyPress.which;
+  if (keyPressed == 38)
+    upPressed = 1;
+  if (keyPressed == 40)
+    downPressed = 1;
+  if (keyPressed == 37)
+    leftPressed = 1;
+  if (keyPressed == 39)
+    rightPressed = 1;
+}
 
+function keyUp(playerKeyPress)
+{
+  var keyPressed = playerKeyPress.which;
+  if (keyPressed == 38)
+    upPressed = 0;
+  if (keyPressed == 40)
+    downPressed = 0;
+  if (keyPressed == 37)
+    leftPressed = 0;
+  if (keyPressed == 39)
+    rightPressed = 0;
+}
 
 function slowDownX()
 {
@@ -47,7 +69,6 @@ var asteroidCounter = 0;
 
 
 
-gameLoop()
 
 function gameLoop()
 {
@@ -130,6 +151,10 @@ function gameLoop()
      }
 
   // loop
-  setTimeout("gameLoop()",10);
+  setTimeout(gameLoop, 10);
+
 }
-}
+gameLoop();
+
+  window.addEventListener("keydown", keyDown);
+  window.addEventListener("keyup", keyUp);

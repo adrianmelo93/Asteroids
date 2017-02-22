@@ -1,25 +1,30 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-// THIS IS YOUR JAVASCRIPT DOCUMENT!
 
-// GENERATE ASTEROIDS IN HTML DOCUMENT
+module.exports = function createAsteroids(){
+  for (var i = 0; i < 100; i++) {
 
-for (var i = 0; i < 100; i++) {
+    var asteroid = new Image();
+    asteroid.id = "asteroid" + i.toString();
+    asteroid.src = "img/asteroid.png";
+    asteroid.style.height = (((Math.random() * 6) + 0)*30);
+    asteroid.style.position = "absolute";
+    asteroid.style.top = (((Math.random() * 6) + 0)*100);
+    asteroid.style.right = -200;
+    var asteroidPosition = asteroid.style.right;
+    var asteroidID = asteroid.id;
 
-  var asteroid = new Image();
-  asteroid.id = "asteroid" + i.toString();
-  asteroid.src = "img/asteroid.png";
-  asteroid.style.height = (((Math.random() * 6) + 0)*30);
-  asteroid.style.position = "absolute";
-  asteroid.style.top = (((Math.random() * 6) + 0)*100);
-  asteroid.style.right = -200;
-  var asteroidPosition = asteroid.style.right;
-  var asteroidID = asteroid.id;
+    document.body.appendChild(asteroid);
 
-  document.body.appendChild(asteroid);
+  }
 
 }
 
+},{}],2:[function(require,module,exports){
+// THIS IS YOUR JAVASCRIPT DOCUMENT!
 
+// GENERATE ASTEROIDS IN HTML DOCUMENT
+var createAsteroids = require("./createAsteroids.js") ;
+createAsteroids();
 // MOVEMENT CONTROLS FOR SHIP
 
 // declare & initialize movement variables
@@ -168,7 +173,12 @@ function gameLoop()
      }
 
   // loop
-  setTimeout("gameLoop()",10);
-}
+  setTimeout(gameLoop, 10);
 
-},{}]},{},[1]);
+}
+gameLoop();
+
+  window.addEventListener("keydown", keyDown);
+  window.addEventListener("keyup", keyUp);
+
+},{"./createAsteroids.js":1}]},{},[2]);
